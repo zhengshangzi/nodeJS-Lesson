@@ -60,8 +60,12 @@ const path=require("path");
 var server=http.createServer(function(req,res){
     
     // 5、process.platform得到当前系统
+    //req.url表示URL地址中，端口以后的内容
+    //使用了URL.parse讲req.url装换为对象，对象提取pathname
+    
     var urlObj=url.parse(req.url);
     var urlPathName=urlObj.pathname;
+    //根据资源路径，可以决定执行哪一段代码
     if(urlPathName=="/favicon.ico"){
         res.end();
     }
