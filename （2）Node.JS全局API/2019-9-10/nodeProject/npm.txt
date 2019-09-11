@@ -1,0 +1,23 @@
+1.初始化指令 npm init
+2.按指示输入，敲回车
+3.初始化完成后会有
+4.可以使用npm install 模块名 --save-dev  就可以将安装模块的信息存入到package.json文件中
+5.nrm用来管理第三方模块的下载镜像
+安装nrm，npm install nrm -g
+nrm ls来查看所有的镜像
+nrm use 镜像名字 来切换下载服务器
+
+当原来镜像不存在某个模块，或者下载速度很慢时
+可以尝试切换下载服务器
+
+1.nrm用来切换第三方模块下载的服务器的
+（一个网速较慢，原来的服务器上不存在该模块）
+2.install date-now在当前目录安装
+模块会被添加到node_modules
+install date-now -g 全局安装
+3.nvmw进行node版本管理的工具
+nvmw install node 版本号（下载）
+nvmw uninstall node 版本号（卸载）
+nvmw ls  （显示所有安装的node的版本）
+nvmw use node 版本号 切换node的版本
+
