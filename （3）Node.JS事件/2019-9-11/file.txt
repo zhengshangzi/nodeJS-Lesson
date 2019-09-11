@@ -1,0 +1,9 @@
+const fs = require("fs");
+const path = require("path");
+var filePath=path.join(__dirname,"/file.txt");
+var fileContent = fs.readFileSync();
+const fs = require("fs");
+const path = require("path");
+var filePath=path.join(__dirname,"/file.txt");
+var fileContent = fs.readFileSync();
+var fileContent = fs.readFileSync();
