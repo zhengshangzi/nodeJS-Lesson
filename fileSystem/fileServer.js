@@ -1,10 +1,23 @@
+/**
+ * 1. debugger设置断点
+ * 2. node inspect(debugger) 文件名
+ * 3. c 到断点之后继续执行
+ * 4. watch('变量名')
+ * 5. watchers 查看监听的变量
+ * 6. unwatch('变量名')
+ * 7. restart 重启脚本
+ */
+
+
 const http = require("http");
 const fs=require("fs");
 const path=require("path");
 const url = require("url");
 
+debugger //设置断点
 http.createServer(function(req,res){
     var urlObj=url.parse(req.url,true);
+    debugger;
     var pathName = urlObj.pathname;
     switch(pathName){
         //http://localhost:8081/
