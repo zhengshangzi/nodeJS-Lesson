@@ -1,0 +1,4 @@
+npm install -g express
+npm install -g express-generator
+express -e HelloExpress
+express --view=ejs HelloExpress

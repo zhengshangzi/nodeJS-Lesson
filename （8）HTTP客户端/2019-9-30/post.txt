@@ -1,0 +1,15 @@
+1. 点击超链接
+发起的是http的get请求
+<a href="localhost:8081/login?username=zhangsan&pwd=123">
+登录
+</a>
+get的URL里面的数据必须是不敏感数据
+
+？参数名=参数值&参数名=参数值&参数名=参数值
+在地址栏输入网址等效于点击超链接，都是发起的get请求
+
+2. 可以通过ajex发起请求
+$get.(url,function(data){})
+
+3. post向服务器端发送数据，以post向服务器端发送的数据
+存储的http请求体里面，直接通过URL是看不到的

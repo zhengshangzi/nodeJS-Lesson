@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/baiduTemplate.js"></script>
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: url(./bg.jpg) repeat;
+        }
+        table {
+            border-collapse: collapse;
+            width: 885px;
+            margin: 0 auto;
+            text-align: center;
+            display: block;
+            margin-top: 100px;
+        }
+        table td, table th {
+            border: 1px solid #cad9ea;
+            color: #666;
+            height: 45px;
+        }
+        table thead th {
+            background-color: #CCE8EB;
+            width: 220px;
+        }
+        table tr:nth-child(odd) {
+            background: #fff;
+        }
+        table tr:nth-child(even) {
+            background: #F5FAFA;
+        }
+
+        .container {
+            margin-top: 60px;
+        }
+        .left {
+            background-color:#d0daf3;
+            position: fixed;
+            top: 60px;
+            bottom: 0;
+            width: 250px; 
+        }
+        .left li {
+            text-align: center;
+            height: 60px;
+            line-height: 60px;
+            font-size: 15px;
+        }
+        .left li:nth-child(1) {
+            background-color: #eee;
+        }
+        .left li:hover {
+            background-color:#eee;
+        }
+        .left a {
+            color:black;
+            text-decoration: none;
+        }
+        .right {
+            margin-left: 250px;
+        }
+        nav {
+            width: 100%;
+            min-width: 960px;
+            height: 60px;
+            background-color: #2a4795;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index:200;
+            color: white;
+            text-align: center;
+            line-height: 60px;
+            font-size: 20px;
+        }
+    </style> 
+</head>
+<body>
+    <nav></nav>
+    <div class="container">
+        <div class="left">
+            <ul>
+                <li>
+                    <a href="##" onclick="showList()">文章列表</a>
+                </li>
+                <li>
+                    <a href="##" onclick="addChapter()">添加文章</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+                <table  class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    编号
+                                </th>
+                                <th>
+                                    文章名称    
+                                </th>
+                                <th>
+                                    文章点击量
+                                </th>
+                                <th>
+                                    操作
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="result"></tbody>
+                        <script id="t:_1234-abcd-1" type="text/html">
+                            
+                            <%for(var i=0; i < list.length; i++){%>
+                                <tr>
+                                    <td>
+                                        <%= list[i]["chapterId"]%>
+                                    </td>
+                                    <td>
+                                        <%= list[i]["chapterName"]%>
+                                    </td>
+                                    <td>
+                                        <%= list[i]["views"]%>
+                                    </td>
+                                    <td>
+                                        <a href="##" onclick="del(<%= list[i]["chapterId"]%>)">删除</a>
+                                    </td>
+                                </tr>
+                                <!-- <div class="oneblog">
+                                    <h2><a title="路·过-喜欢在路上" href="/"><%= list[i]["chapterName"]%></a></h2>
+                                    <figure><img src=<%= list[i]["imgPath"] %> border='0' width='120' height='120' alt='路·过-喜欢在路上'></figure>
+                                    <ul class="nlist">
+                                        <p><%= list[i]["chapterDes"]%>...</p>
+                                        <a title="路·过-喜欢在路上" href="##" target="_blank" class="readmore" onclick="showDetail(event, <%= list[i]["chapterId"] %>)">阅读全文>></a>
+                                    </ul>
+                                    <p class="dateview">
+                                        <span>发布时间：<%= list[i]["publishTimer"]%></span>
+                                        <span>作者：<%= list[i]["author"]%></span>
+                                        <span>分类：[<a href="/">悠客</a>]</span>
+                                        <span class="nl">浏览（<%= list[i]["views"]%>)</span>
+                                        <span class="n2">评论（<a href="/">0</a>）</span>
+                                        <div class="line"></div>
+                                    </p>
+                                </div> -->
+                            <%}%>
+                        </script>
+
+
+
+                        <!-- <tr>
+                            <td>
+                                109
+                            </td>
+                            <td>
+                                13
+                            </td>
+                            <td>
+                                1.34
+                            </td>
+                            <td>
+                                213
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                109
+                            </td>
+                            <td>
+                                13
+                            </td>
+                            <td>
+                                1.34
+                            </td>
+                            <td>
+                                213
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                109
+                            </td>
+                                    <td>
+                                        13
+                                    </td>
+                                    <td>
+                                        1.34
+                                    </td>
+                                    <td>
+                                        213
+                                    </td>
+                        </tr>
+                        <tr>
+                                    <td>
+                                        109
+                                    </td>
+                                    <td>
+                                        13
+                                    </td>
+                                    <td>
+                                        1.34
+                                    </td>
+                                    <td>
+                                        213
+                                    </td>
+                        </tr>
+                        <tr>
+                                    <td>
+                                        109
+                                    </td>
+                                    <td>
+                                        13
+                                    </td>
+                                    <td>
+                                        1.34
+                                    </td>
+                                    <td>
+                                        213
+                                    </td>
+                        </tr>
+                        <tr>
+                                    <td>
+                                        109
+                                    </td>
+                                    <td>
+                                        13
+                                    </td>
+                                    <td>
+                                        1.34
+                                    </td>
+                                    <td>
+                                        213
+                                    </td>
+                        </tr> -->
+                    </table>
+        </div>
+    </div>
+    
+        
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    $.get("http://localhost:8084/getChapterList", function(data) {
+        var data={
+            "title":'欢迎使用baiduTemplate',
+            "list": JSON.parse(data)
+        };
+        var bt=baidu.template;
+        var html=bt('t:_1234-abcd-1',data);
+        document.getElementById('result').innerHTML=html;
+        console.log(data);
+    })
+
+    function del(chapterId) {
+        $.post("http://localhost:8084/deleteChapter?chapterId=" + chapterId, function(data) {
+            console.log(data);
+            var data={
+                "title":'欢迎使用baiduTemplate',
+                "list": JSON.parse(data)
+            };
+            var bt=baidu.template;
+            var html=bt('t:_1234-abcd-1',data);
+            document.getElementById('result').innerHTML=html;
+        })
+    }
+
+    function addChapter() {
+        window.location = "http://localhost:8083/addChapter/"
+    }
+</script>
+</html>
