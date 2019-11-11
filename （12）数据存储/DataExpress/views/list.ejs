@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--通过标签的形式把render传过来的数据显示过来-->
+    <ul>
+        <% for(var i = 0 ; i < chapterList.length; i++) {%>
+            <li>
+                <%= chapterList[i]["title"] %>
+                <%= chapterList[i]["content"] %>
+                <a href='/del?chapterid=<%= chapterList[i]["chapterid"]%>'>删除</a>
+            </li>
+        <%}%>
+    </ul>
+</body>
+</html>
