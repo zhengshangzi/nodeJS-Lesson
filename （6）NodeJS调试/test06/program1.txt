@@ -1,0 +1,27 @@
+Url {
+  protocol: null,
+  slashes: null,
+  auth: null,
+  host: null,
+  port: null,
+  hostname: null,
+  hash: null,
+  search: null,
+  query: [Object: null prototype] {},
+  pathname: '/',
+  path: '/',
+  href: '/'
+}
+
+E:\大三上\node.js\（6）NodeJS调试\素材\program1\myServer.js:46
+    console.log(str1);
+                ^
+
+ReferenceError: str1 is not defined
+    at showIndex (E:\大三上\node.js\（6）NodeJS调试\素材\program1\myServer.js:46:17)
+    at Server.httpManager (E:\大三上\node.js\（6）NodeJS调试\素材\program1\myServer.js:27:13)
+    at Server.emit (events.js:210:5)
+    at parserOnIncoming (_http_server.js:745:12)
+    at HTTPParser.parserOnHeadersComplete (_http_common.js:115:17)
+
+错误：引用错误，引用一个不存在的变量时发生的错误。
